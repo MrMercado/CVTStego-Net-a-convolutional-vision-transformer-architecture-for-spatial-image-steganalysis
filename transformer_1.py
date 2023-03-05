@@ -175,6 +175,16 @@ print("datos de test: ", X_test.shape)
 print("etiquetas de test: ", y_test.shape)
 
 
+################################################## 30 SRM FILTERS
+srm_weights = np.load('Desktop\joven_investigador_Minciencias\pesos_mejor_modelo_gbrasnet/SRM_Kernels1.npy') 
+biasSRM=np.ones(30)
+print (srm_weights.shape)
+################################################## TLU ACTIVATION FUNCTION
+T3 = 3;
+def Tanh3(x):
+    tanh3 = K.tanh(x)*T3
+    return tanh3
+##################################################
 
 ########################################
 
