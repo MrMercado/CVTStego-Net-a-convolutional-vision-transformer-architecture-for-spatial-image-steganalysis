@@ -19,9 +19,7 @@ MiPOD (0.2 and 0.4 bpp), 76.70% and 85.80% on HILL (0.2 and 0.4 bpp), 78.20% and
 
 
 ## Folders
-- **training with TL** this folder contains the codes required to perform the training with transfer learning and multispectral images (15 channels), which contains the python file (code_15channels_with_weights.py) in which the experiments will be run and the file (models_classification2.py) that will contain the models, to be called by the main code.
-
-- **training without TL** this folder contains the codes required to perform the training without transfer learning with multispectral images (15 channels), which contains the python file (code_15channels_without_weights.py ) in which the experiments will be run and the file (models_classification5.py) that will contain the models, to be called by the main code.
+- **transformer_1.py** This file contains the model used in the various training experiments carried out for the research. To use it, the database must be varied and the hyperparameters adjusted to obtain the desired results, while keeping the same code.
 
 
 ## Requirements
