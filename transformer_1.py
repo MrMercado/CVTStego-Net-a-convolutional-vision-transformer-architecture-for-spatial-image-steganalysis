@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-#libreria necesarias para cargar los datos y hacer uso de estos.
+#libraries
+
 import numpy as np
 from scipy import misc, ndimage, signal
 import time
@@ -65,20 +66,13 @@ from sklearn.model_selection import StratifiedKFold
 # graficar modelo creado
 from tensorflow.keras.utils import plot_model
 
-# tiempo
+# time
 import datetime
 
 #segmentar
 from scipy import misc
 from scipy import ndimage
 import copy
-
-#funciones para resumir codigo
-#from funciones import *
-
-
-
-
 
 import tensorflow as tf
 
@@ -144,23 +138,19 @@ import glob
 from skimage.util.shape import view_as_blocks
 from keras.utils import np_utils
 from tensorflow.keras.utils import to_categorical
-#funciones para resumir codigo
-#from funciones import *
-
-
 
 ########################################
 
-## Cargar bases de datos
+## Load databases
 
 X_train = np.load("/home/rtabares/experimentos_jp/dataset_transformer_0.2/WOW/X_train.npy")
 y_train = np.load('/home/rtabares/experimentos_jp/dataset_transformer_0.2/WOW/y_train.npy')
 
-X_test = np.load('/home/rtabares/experimentos_jp/dataset_transformer_0.2/WOW/X_valid.npy')
-y_test = np.load('/home/rtabares/experimentos_jp/dataset_transformer_0.2/WOW/y_valid.npy')
+X_test = np.load('/home/rtabares/experimentos_jp/dataset_transformer_0.2/WOW/X_test.npy')
+y_test = np.load('/home/rtabares/experimentos_jp/dataset_transformer_0.2/WOW/y_test.npy')
 
-X_valid = np.load('/home/rtabares/experimentos_jp/dataset_transformer_0.2/WOW/X_test.npy')
-y_valid = np.load('/home/rtabares/experimentos_jp/dataset_transformer_0.2/WOW/y_test.npy')
+X_valid = np.load('/home/rtabares/experimentos_jp/dataset_transformer_0.2/WOW/X_valid.npy')
+y_valid = np.load('/home/rtabares/experimentos_jp/dataset_transformer_0.2/WOW/y_valid.npy')
 
 
 """
@@ -188,7 +178,7 @@ print("etiquetas de test: ", y_test.shape)
 
 ########################################
 
-################################## Funciones  ################################################################
+################################## Functions ################################################################
 
 # Squeeze-and Excitation
 
@@ -282,8 +272,8 @@ def Block_4 (input, parameter):
   return output  
   
   
-# Para usar la transformaci�n, a la funcion transformer_2, se le agrego un parametro llamado, parameter: para establecer las propiedades del SE_BLock que va dentro de el
-  
+# To use the transformation, a parameter called parameter: was added to the transformer_2 function to set the properties of the SE_BLock that goes inside it.
+
   
 # ViT ARCHITECTURE
 #Hyperparameters 1 tRANSFORMER
@@ -440,10 +430,9 @@ def Transform_sh_2(inputs):
       
 ########################################
 
-################################## Modelos  ################################################################
+################################## Model  ################################################################
  
-  
-  
+ 
 def new_arch():
   tf.keras.backend.clear_session()
   inputs = tf.keras.Input(shape=(256,256,1), name="input_1")
@@ -584,7 +573,7 @@ def Final_Results_Test(PATH_trained_models):
   
   
   
-## "_______________________________________________predicci�n de datos__________________________________________________________________________")
+## "_______________________________________________Train__________________________________________________________________________")
 
 
 #model2.load_weights("/home/rtabares/Transformer_modelos_finales/model_Transformer_WOW_04bpp_Prueba1/logs/model_Transformer_WOW_04bpp_validation_por_test_2023-02-03_12-45-46/saved-model-240-0.8823.hdf5")
